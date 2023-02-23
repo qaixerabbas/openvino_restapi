@@ -11,9 +11,13 @@ This repository contains deep learning models optimized for inference using Open
   * ``` pip install requirements.txt ```
 3. Locate your .h5 model and run following command that will save your model as saved_model format for tensorflow
   * ``` python h5_to_saved_model.py ```
-4. Modify the bees_openvino_fastapi.py as per you requirements and run following command
+4. Convert saved_model to openvino mode.xml using following command
+  * ``` mo --saved_model_dir <SAVED_MODEL_DIRECTORY> ``` 
+  * Example:
+  * ``` mo --saved_model_dir local/saved_model/ ```
+6. Modify the bees_openvino_fastapi.py as per you requirements and run following command
   * ``` uvicorn bees_openvino_fastapi:app --reload ```
-5. Open the link in the browser and start testing your API.
+7. Open the link in the browser and start testing your API.
 
 ### Todo
 
